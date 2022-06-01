@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+	.kockica{
+	  display: block;
+	  float: left;
+	  width: 40px;
+	  height: 40px;
+	  margin: 4px;
+	  background-color: grey;
+	  text-align: center;
+	  font-size: 30px;
+	}
+	.ploca{
+		width: 150px;
+		height: 200px;
+	}
+	</style>   
+</head>
+<body>
+<div class="ploca"></div>
+
+<script>
+    
+class Bomba{
+    constructor(broj, boja){
+        var div1=document.createElement("div");
+        div1.classList="kockica";
+		this.div1 = div1;
+        document.getElementsByClassName("ploca")[0].append(div1);
+        this.broj=broj;
+		this.boja=boja;
+		
+
+
+        this.upri = this.upri.bind(this);
+        this.div1.addEventListener("click",this.upri)
+     
+        
+        
+
+        }
+        upri(){
+            this.div1.innerHTML = this.broj;
+			this.div1.style.color = this.boja;
+			this.div1.style.backgroundColor = "lightgrey";
+    }
+
+}
+
+
+
+let broj1 = new Bomba("1", "blue");
+let broj2 = new Bomba("1", "blue");
+let broj3 = new Bomba("2", "green");
+let broj4 = new Bomba("3", "red");
+let broj5 = new Bomba("1", "blue");
+let broj6 = new Bomba("1", "blue");
+let broj7 = new Bomba("1", "blue");
+let broj8 = new Bomba(" ", " ");
+let broj9 = new Bomba("2", "green");
+
+
+</script>
+</body>
+</html>

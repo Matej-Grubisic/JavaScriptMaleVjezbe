@@ -1,0 +1,69 @@
+<html>
+<head>
+<style type="text/css">
+
+.kocka{
+    width: 200px;
+    height: 200px;
+    background-color:red;
+    margin-bottom: 20px;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+<div id="slova"></div>
+<div id="kockapolje"></div>
+
+
+
+
+<script>
+
+class Kockice{
+    constructor(oznaka){
+        this.oznaka = oznaka;
+        var novakocka = document.createElement("div");
+        
+        novakocka.classList.add("kocka");
+        this.uprikocku = this.uprikocku.bind(this);
+        novakocka.addEventListener("click", this.uprikocku);
+        document.getElementById("kockapolje").append(novakocka);
+        
+
+        
+
+    }
+
+    uprikocku(event){
+        document.getElementById('slova').append('X');
+        var trenutno = event.currentTarget;
+        console.log(this.oznaka);
+        if(this.oznaka == "1"){
+            trenutno.style.backgroundColor = "yellow";
+        }
+        else if(this.oznaka == "2"){
+            trenutno.style.backgroundColor = "blue";
+            trenutno.style.width = "350px";
+        }
+        else{
+            trenutno.style.borderRadius = "100px";
+        }
+    }
+}
+
+var kocka1 = new Kockice("1");
+var kocka2 = new Kockice("2");
+var kocka3 = new Kockice("3");
+
+
+</script>
+
+
+</body>
+
+</html>
